@@ -49,11 +49,8 @@ export default function NoteForm({ onClose }: NoteFormProps) {
     values: FormValues,
     formikHelpers: FormikHelpers<FormValues>
   ) => {
-    createNoteMutation.mutate(values, {
-      onSuccess: () => {
-        formikHelpers.resetForm();
-      },
-    });
+    formikHelpers.resetForm();
+    createNoteMutation.mutate(values);
   };
 
   return (
