@@ -28,6 +28,7 @@ export const fetchNotes = async (
 };
 
 export const fetchNoteById = async (postId: string) => {
+  await new Promise((res) => setTimeout(res, 1000));
   const res = await axios.get<Note>(`/notes/${postId}`);
   return res.data;
 } 
